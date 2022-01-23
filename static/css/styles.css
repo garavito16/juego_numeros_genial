@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    margin-bottom: 1.0em;
+}
+
+body {
+    padding: 0 20%;
+}
+
+.btn_form {
+    background-color: orange;
+    border-radius: 5px;
+    padding: 0.5em;
+    margin: auto;
+    border:0;
+}
+
+.btn_play_again {
+    background-color: green;
+}
+
+.btn_record {
+    background-color: greenyellow;
+}
+
+.btn_list {
+    background-color: rebeccapurple;
+}
+
+.message_guess {
+    color: orange;
+    
+}
+
+.input_user {
+    width: 250px;
+    height: 2.0em;
+    border-radius: 5px;
+    border:0;
+}
+
+form {
+    border-radius: 5px;
+    background-color: gray;
+    width: 300px;
+    margin: auto;
+    padding: 10px 25px;
+}
+
+form > * {
+    display: block;
+}
+
+.view_message {
+    height: 4.0em;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.view_message  > p {
+    font-size: x-large;
+    vertical-align: center;
+    margin: 0;
+}
+
+.formulario {
+    margin-top: 1.0em;
+}
+
+table {
+    width: 300px;
+    background-color: gray;
+    font-size: x-large;
+    margin: auto;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 0.2em 0;
+}

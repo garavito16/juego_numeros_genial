@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Winners</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Persona</th>
+            <th>Intentos</th>
+        </tr>
+        {% for i in range(session["list_winners"]|length): %}
+            <tr>
+                <td>{{session["list_winners"][i]["winner"]}}</td>
+                <td>{{session["list_winners"][i]["intents"]}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <form class="formulario" action="/return" method="GET">
+        <div>
+            <button type="submit" class="btn_form btn_list">back page</button>
+        </div>
+    </form>
+</body>
+</html>

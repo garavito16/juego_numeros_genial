@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Number Game</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+</head>
+<body>
+    <h1>Welcome to the Great Number Game!!!</h1>
+    <p>I am Thinking of a number between 1 and 100</p>
+    <form class="form" action="/guess" method="POST">
+        <p class="message_guess">Take a guess!!!</p>
+        {% if session["contador"] > 0: %}
+            <div class="view_message" style="background-color: {{session['color']}};">
+                <p>{{session["message"]}}</p>
+            </div>
+        {% endif %}
+        {% if session["game_over"] == 1: %}
+            <div>
+                <p class="message_guess">{{session["message_intent"]}}</p>
+                <button type="submit" class="btn_form btn_play_again">Play again</button>
+            </div>
+        {% else: %}
+            <div>
+                <input class="input_user" name="input_guess" type="number" placeholder="Ingrese su numero">
+                <button type="submit" class="btn_form btn_guess">Guess</button>
+            </div>
+        {% endif %}
+    </form>
+
+    {% if session["winner"] == 1 and session["register"] == 0: %}
+        <form class="formulario" action="/register" method="POST">
+            <div>
+                <input class="input_user" name="input_name" type="text" placeholder="Ingrese su nombre">
+                <button type="submit" class="btn_form btn_record">record as winner</button>
+            </div>
+        </form>
+    {% endif %}
+
+    {% if session["winner"] == 1 and session["register"] == 1: %}
+        <form class="formulario" action="/view_list" method="GET">
+            <div>
+                <button type="submit" class="btn_form btn_list">See list of winners</button>
+            </div>
+        </form>
+    {% endif %}
+</body>
+</html>
